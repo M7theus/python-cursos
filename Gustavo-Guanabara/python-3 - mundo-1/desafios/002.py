@@ -1,0 +1,6 @@
+print('Olá!')
+n = input('Digte seu nome:')
+a = input('Digite seu ano de nascimento: ')
+m = input('Digite seu mês de nascimento: ')
+d = input('Digite seu dia de nascimento: ')
+print('Seja bem vindo',n,'!Você nasceu em: ',a,'no mês:',m,'e no dia: ',d)
