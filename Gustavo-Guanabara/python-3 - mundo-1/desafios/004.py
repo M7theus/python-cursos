@@ -1,0 +1,7 @@
+print('Olá, seja bem-vindo!')
+n1 = input('Digite qualquer coisa: ')
+print('A sua string é do tipo: ', type(n1))
+print('É um número: ', n1.isnumeric())
+print('É uma letra: ', n1.isalpha())
+print('Possue letra ou número: ', n1.isalnum())
+print('Possue letra maíscula: ', n1.isupper())
