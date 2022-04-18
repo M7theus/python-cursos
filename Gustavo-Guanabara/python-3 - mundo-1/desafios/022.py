@@ -1,0 +1,6 @@
+print('Nome')
+n1 = str(input('Por favor, digite seu nome completo: '))
+print('Letras maísculas -->', n1.upper().strip())
+print('Minúsculas -->', n1.lower().strip())
+print('Total de letras -->', len(n1.strip()))
+print('Primeiro nome -->', len(n1.split()))
