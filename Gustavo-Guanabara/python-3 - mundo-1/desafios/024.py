@@ -1,4 +1,4 @@
-print('Cidade')
-n1 = str(input('Digite o nome de qualquer cidade: ')).capitalize().strip().split()
-n2 = 'Santo' in n1[0]
-print('Sua cidade começa com santo: {}'.format(n2))
+cid = str(input('Em qual cidade você nasceu? ')).strip()
+n1 = (cid[:5].upper() == 'SANTO')
+print('O nome da cidade digitada possui a palavra [santo] no inicia da frase: {}'.format(n1))
+
