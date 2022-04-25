@@ -14,7 +14,7 @@ n2 = int(input('Qual foi? '))
 print('Hum.......')
 sleep(2)
 if n2 == r:
-    print('Parabéns, você conseguiu adivinhar!')
+    print('\033[1;32mParabéns, você conseguiu adivinhar!\033[m')
 else:
-    print('Ah! Não foi dessa vez :0')
-print('O número que tinha pensado era no {}'.format(r))
+    print('\033[1;33mAh! Não foi dessa vez :0\033[m')
+print('O número que tinha pensado era no \033[4;0;43m{}\033[m'.format(r))
