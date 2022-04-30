@@ -8,7 +8,7 @@ elif n1 - n2 <= 14:
     print('Infantil')
 elif n1 - n2 <= 19:
     print('Jnior')
-elif n1 - n2 <= 20:
+elif n1 - n2 <= 25:
     print('Sênio')
 else:
     print('Master')
