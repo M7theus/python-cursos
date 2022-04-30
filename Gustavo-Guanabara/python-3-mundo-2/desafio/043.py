@@ -2,7 +2,7 @@ n1 = float(input('Digite sua altura em metros: '))
 n2 = float(input('Digite seu peso em Kg: '))
 imc = n2/(n1*n1)
 if imc < 18.5:
-    print('Você está abaixo do peso. Seu IMC é {}'.format(imc))
+    print('Você está abaixo do peso. Seu IMC é {:.2f}'.format(imc))
 elif imc <= 25:
     print('Você está com o peso ideal. Seu IMC é {:.2f}'.format(imc))
 elif imc <= 30:
