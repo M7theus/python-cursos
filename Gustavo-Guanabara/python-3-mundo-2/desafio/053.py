@@ -1,3 +1,6 @@
+#Não conseguir chegar a uma conclusão
+
+
 frase = str(input('Digite uma frase qualquer: ')).strip()
 n2 = len(frase)
 n3 = frase.count(' ')

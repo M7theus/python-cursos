@@ -1,3 +1,5 @@
+#Não conseguir chegar a uma conclusão
+
 numero = int(input('Digite um número qualquer: '))
 
 if numero > 1:
