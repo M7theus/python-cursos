@@ -1,11 +1,12 @@
-maior_peso = 0
-menor_peso = 0
+t = 0
 
-for c in range(0,6):
-    peso = float(input('Digite seu peso em Kg: '))
-    if peso :
-        maior_peso += 1
-    else:
-        menor_peso += 1
-print(maior_peso)
-print(menor_peso)
+
+for c in range(0,7):
+    peso = float(input('Digite seu peso: '))
+    t += peso
+    n1 = str(peso)    
+    n2 = n1.split()
+        
+print(n2)
+print(t)      
+print(c+1)
