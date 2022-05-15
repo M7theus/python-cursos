@@ -1,6 +1,9 @@
-s = 0
+soma = 0
+cont = 0
+
 print('Os números ímpares e múltiplos de três são:')
-for c in range(0,501,3):
-    print(c)
-    s += c
-print('E a soma entre eles é {}'.format(s))
+for c in range(1,501,2):
+    if c % 3 ==0:
+        soma += c
+        cont += 1
+print('A soma de todos os {} valores solicitados é {}'.format(cont,soma))
