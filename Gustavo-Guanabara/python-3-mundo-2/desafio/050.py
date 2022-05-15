@@ -1,8 +1,10 @@
-print('Logo abaixo, digite 6 números inteiro')
+soma = 0
+cont = 0
 
-s = 0
-for c in range(0,6):
-    n1 = int(input('Digite um número: ')) 
-    if n1 % 2 == 0:
-        s += n1
-print(s)
+
+for num in range(1,7):
+    numeros = int(input('Digite o {} número: '.format(num)))
+    if numeros % 2 == 0:
+        soma += numeros
+        cont += 1
+print('Você digitou um total de {} números pares e a soma entre eles deu {}'.format(cont,soma))

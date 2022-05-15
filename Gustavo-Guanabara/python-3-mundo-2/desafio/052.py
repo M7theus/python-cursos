@@ -1,16 +1,15 @@
-#Não conseguir chegar a uma conclusão
-
 numero = int(input('Digite um número qualquer: '))
+total = 0
 
-if numero > 1:
-    
-    for c in range(2,numero+1):
-        
-        if (numero % c) == 0:
-            print('{} não é primo'.format(numero))
-            
+for c in range(1,numero + 1):
+    if numero % c == 0:
+        print('\033[33m{}\033[m'.format(c), end=' ')
+        total += 1
     else:
-        print('{} é primo'.format(numero))
-    
+        print('\033[31m{}\033[m'.format(c), end=' ')
+
+if total == 2:
+    print('\nO número {} é primo'.format(numero))
 else:
-    print('O número {}'.format(numero))
+    print('\nO número não é primo')
+        

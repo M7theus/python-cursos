@@ -1,11 +1,9 @@
-#Não conseguir chegar a uma conclusão
-
-
-frase = str(input('Digite uma frase qualquer: ')).strip()
-n2 = len(frase)
-n3 = frase.count(' ')
-n4 = n2 - n3
-print(n4)
-
-for c in range(1,n4+1):
-    print(c, end=' ')
+frase = str(input('Digite uma frase qualquer: ')).strip().upper()
+fat = frase.split()
+junto = ''.join(fat)
+inverso = junto[::-1]
+print('O inverso da palavra {} é {}'.format(junto,inverso))
+if junto == inverso:
+    print('Sua frase é um palíndromo')
+else:
+    print('Sua frase não é um palíndromo')
