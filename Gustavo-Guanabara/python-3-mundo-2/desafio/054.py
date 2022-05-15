@@ -1,11 +1,16 @@
+from datetime import datetime
+ano = datetime.today().year
+print(ano)
 s = 0
-d = 0
+n = 0
 
-for c in range(0,7):
-    n1 = int(input('Digite quantos anos você tem: '))
-    if n1 > 21:
+
+
+for pessoa in range(1,8):
+    pessoas = int(input('Digite o ano de nascimento da {} pessoa: '.format(pessoa)))
+    idade = ano - pessoas
+    if idade >= 21:
         s += 1
     else:
-        d += 1
-print('Dessas sete pessoas\n--> \033[1;32m{}\033[m São maiores de idade\n--> \033[1;31m{}\033[m São menores de idade'.format(s,d))
-        
+        n += 1
+print('Do total das {} pessoas\n-->{} São maiores de idade\n-->{} São menores de idade'.format(pessoa,s,n))

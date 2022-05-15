@@ -1,20 +1,19 @@
-# Sem chegar a uma conclusão
+maior = 0
+menor = 0
 
-s = 0
-m = 0
+for peso in range(1,6):
+    pesos = float(input('Digite o peso da {} pessoa: '.format(peso)))
+    if peso == 1:
+        maior = pesos
+        menor = pesos
+    else:
+        if pesos > maior:
+            maior = pesos
+        if pesos < menor:
+            menor = pesos
 
-for peso in range(0,5):
-    pesos = float(input('Digite seu peso em Kg: '))
-    s += pesos
-    n = peso - s
-print(s)
-print(m)
-
-for _ in range(0,5):
-    if pesos > 0:
-        a = pesos
-        if pesos > n:
-            print('O maior número é',pesos)
-        else:
-            print('O maior número é',m)
+print('Maior peso: {}'.format(maior))
+print('Menor peso {}'.format(menor))
+        
+    
         
