@@ -1,5 +1,4 @@
-m = 'M' or 'F'
-
-while m != 'M' or 'F':
-    m = str(input('Digite o seu sexo [M/F]: ')).upper().strip()
-    print('Parece que a informação está errada')
+n1 = 'm'
+while n1 != 'M': 
+    n1 = str(input('Digite seu sexo [M/F]: ')).upper().strip()
+print('Fim')
