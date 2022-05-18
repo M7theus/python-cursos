@@ -1,5 +1,4 @@
-n = 'm' 
-while n != 'M' and n !='F':
-    n = str(input('Digite seu sexo [M/F]: ')).upper().strip()
-    print('Parece que à algo de errado')
-print('FIM')
+sexo = str(input('Digite seu sexo [M/F]: ')).strip().upper()[0]
+while sexo not in 'MF':
+    sexo = str(input('Digite seu sexo [M/F]: ')).strip().upper()[0]
+print('{}'.format(sexo))
