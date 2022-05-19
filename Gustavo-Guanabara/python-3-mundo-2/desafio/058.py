@@ -1,16 +1,15 @@
 from random import randint
-from time import sleep
-
 computador = randint(0,10)
-print('Irei pensar em um número entre 0 e 10. Você consegue adivinhar? ')
-sleep(1)
+print('Vou pensar em um número entre 0 e 10')
+print('Você consegue adivinhar?')
+usuario = int(input('Digite o número: '))
+tentativas = 0
 
-usuario = 0
-tentativa = 0
 while usuario != computador:
-    usuario = int(input('Digite seu número: '))
-    if usuario != computador:
-        print('Não foi dessa vez, tente novamente')
-    tentativa += 1
-    
-print('Parabéns! Você acertou. Porém, você precisou de um total de {} tentativas'.format(tentativa))
+    if usuario > computador:
+        print('Menor')
+    else:
+        print('Maior')
+    usuario = int(input('Digite novamente: '))
+    tentativas += 1
+print('Você teve um total de {} tentativas. Parabéns'.format(tentativas))
