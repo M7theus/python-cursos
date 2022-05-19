@@ -1,34 +1,30 @@
-numero = int(input('Digite um número qualquer: '))
-razao = int(input('Digite a razão: '))
+numero = int(input('Digite o primeiro termo: '))
+razao = int(input('Digite a razão da PA: '))
 
-n = 0
-soma = numero - razao
-while n != 10:
-    n += 1
+c = 0
+soma = numero
+while c != 10:
+    print('{} '.format(soma),end='')
     soma += razao
-    if n == 1:
-        print('{}! = {}'.format(numero,soma), end=' ')
-    else:
-        print('{}'.format(soma), end =' ')
-    if n == 10:
-        pergunta = str(input('Você deseja inserir novos números? [S/N]: ')).upper()
-        while pergunta == 'S':
-            numero = int(input('Digite o novo número: '))
-            razao = int(input('Digite a razão: '))
-            n = 0
-            soma = numero - razao
-            while n != 10:
-                n += 1
-                soma += razao
-                if n == 1:
-                    print('{}! = {}'.format(numero,soma), end=' ')
-                elif n == 10:
-                    pergunta = str(input('Você deseja inserir novos números? [S/N]: ')).upper()
-                else:
-                    print('{}'.format(soma), end =' ')
+    c += 1
+    if c == 10:
+        pergunta = int(input('Deseja mostrar mais quantos termos? '))
+        if pergunta == 0:
+            print('Programa finalizado com sucesso. {} termos mostrados'.format(c))
         else:
-            print('Fim do programa')
-            
-           
+            d = 0
+            while d != pergunta:
+                print('{} '.format(soma),end='')
+                soma += razao
+                d += 1
+            if d == pergunta:
+                pergunta = int(input('Deseja mostrar mais quantos termos? '))
+                d = 0
+                while d != pergunta:
+                    print('{} '.format(soma),end='')
+                soma += razao
+                d += 1
+                
+print('Fim do programa')
         
 
