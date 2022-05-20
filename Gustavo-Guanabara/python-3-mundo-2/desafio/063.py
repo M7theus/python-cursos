@@ -1,24 +1,15 @@
-from math import floor
+termo = int(input('Quantos termos deseja mostrar? '))
 
-numero = int(input('Digite qualquer número: '))
-novo = numero
-novo1 = numero
-
-n = 0
-while n != 10:
-    
-    #Sequência de frente
-    divisao = floor(novo/1.6)
-    soma = divisao + novo
-    novo = soma
-    print(soma, end=' ')
+c = 0
+primeiro = 0
+segundo = 1
+soma = primeiro
+while c != termo:
+    soma += primeiro
+    print(' {} '.format(soma),end='')
+    primeiro = segundo
+    segundo = soma
     
     
-    #Sequência de tráz
-    divisao1 = floor(novo1/1.6)
-    novo1 = divisao1
-    print(divisao1, end=' ')
-
-    n += 1
+    c += 1
     
-print('De frente: ')

@@ -1,10 +1,7 @@
-numero = 0
-soma = 0
-cont = 0
-print('Digite 999 para parar o programa')
+numero = soma = cont = 0
 while numero != 999:
-    numero = int(input('Digite qualquer número: '))
-    soma += numero -999
-    cont += 1
-print('Fim do programa')
-print('A soma dos {} números digitados é {}'.format(cont,soma))
+    numero = int(input('Digite um número qualquer [999 para parar]: '))
+    if numero != 999:
+        soma += numero
+        cont += 1
+print('Você digidou um total de {} números e a soma entre eles deu {}'.format(cont,soma))
