@@ -4,9 +4,10 @@ menor = 0
 b_barato = 0
 m_caro = 0
 while True:
-    print('-='*15)
-    print('Cadastramento de produtos')
-    print('-='*15)
+    if gasto == 0:
+        print('-='*15)
+        print('Cadastramento de produtos')
+        print('-='*15)
     nome = str(input('Digite o nome do produto: '))
     preco = float(input('Digite o preço do produto em R$: '))
     gasto += preco
@@ -27,7 +28,6 @@ while True:
         if preco < b_barato:
             b_barato = preco
             b_nome = nome
-    
     if m_caro == 0:
         m_caro = preco
         m_nome = nome
@@ -35,6 +35,7 @@ while True:
         if preco > m_caro:
             m_caro = preco
             m_nome = nome
+
 print('Fim do programa')
 print(f'Você gastou um total de R${gasto:.2f}')    
 print(f'{maior} produtos custam acima de R$ 1000')
