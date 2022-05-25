@@ -1,12 +1,8 @@
-c =  0
-numero = int(input('Deseja vê a tabuada de qual número? '))
+numero = 0
 while True:
-    if numero > 0:
-        for numeros in range(0,11):
-            resultado = numero * numeros
-            print(f'{numero} x {numeros} = {resultado}')
-    numero = int(input('Digite outro número: '))
+    numero = int(input('Digite o número que queira ver da tabuada (negativo para parar): '))
     if numero < 0:
         break
+    for c in range(1,11):
+        print(f'{numero} x {c} = {numero*c}')
 print('Fim do programa')
-    

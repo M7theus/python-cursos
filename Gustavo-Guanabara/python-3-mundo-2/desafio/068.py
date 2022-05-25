@@ -1,69 +1,49 @@
-from random import randint,choice
-from time import sleep
-import emoji
+from random import randint, choice
+lista = ['Par','Impar']
+cont = 0
+print('='*20)
+print('Par ou Ímpar')
+print('='*20)
 
-print('Que tal um jogo? Ímpar ou Par?')
-print('')
-numero = cont = 0
 while True:
-    list = ['Par','Impar']
-    escolha_c = choice(list)
-
-    vez_c = randint(1,2)
+    ale = randint(1,2)
+    escolha = choice(lista)
     numero_c = randint(0,10)
-    
-    if vez_c == 1:
-        print('Sinto muito, mas vou escolher')
-        print('Hmm...')
-        sleep(1)
-        numero_p = int(input('Pronto! Digite seu número agora: '))
-        soma = (numero_p + numero_c)
-        print('Hmm...')
-        sleep(1)
-        print('')
-        if escolha_c == 'Par':
+    if ale == 1:
+        print(f'Sinto muito, mas vou escolher primeiro!\ne minha escola será {escolha}')
+        usuario = int(input('Digite seu número: '))
+        soma = usuario + numero_c
+        if escolha == 'Par':
             if soma % 2 == 0:
-                print(f'Eu \033[1;31mvenci!\033[m Escolhir \033[1;37m{escolha_c}\033[m e meu número foi \033[1;37m{numero_c}\033[m')
+                print(f'Ganhei!\nescolhir o número {numero_c}')
                 break
-            else:
-                print(f'Você \033[1;32mvenceu.\033[m Escolhir \033[1;37m{escolha_c}\033[m e meu número foi \033[1;37m{numero_c}\033[m')
-                cont += 1
-        if escolha_c == 'Impar':
+            elif soma % 2 != 0:
+                print(f'Você ganhou\nescolhir o número {numero_c}')
+                print('')
+        elif escolha == 'Impar':
             if soma % 2 != 0:
-                print(f'Eu \033[1;31mvenci!\033[m Escolhir \033[1;37m{escolha_c}\033[m e meu número foi \033[1;37m{numero_c}\033[m')
+                print(f'Ganhei!\nescolhir o número {numero_c}')
                 break
-            else:
-                print(f'Você \033[1;32mvenceu.\033[m Escolhir \033[1;37m{escolha_c}\033[m e meu número foi \033[1;37m{numero_c}\033[m')
-                cont += 1
-        vez_c = 0
-        
-    if vez_c == 2:
-        numero += cont
-        print('Certo, você escolhe primeiro')
-        escolha_p = str(input('[Par] ou [Impar]: ')).strip().upper()[0]
-        print('Já escolhir meu número. Escolha o seu agora!')
-        numero_p = int(input('Digite seu número: '))
-        soma = (numero_p + numero_c)
-        print('Hmm...')
-        sleep(1)
-        print('')
-        if escolha_p == 'P':
+            elif soma % 2 == 0:
+                print(f'Você ganhou\nescolhir o número {numero_c}')
+                print('')
+    else:
+        escolha_u = str(input('Escolha [P/I]: ')).strip().upper()[0]
+        while escolha_u not in 'P''I':
+            escolha_u = str(input('Escolha [P/I]: ')).strip().upper()[0]
+        usuario = int(input('Digite seu número: '))
+        soma = usuario + numero_c
+        if escolha_u == 'P':
             if soma % 2 == 0:
-                print(f'Você \033[1;32mvenceu.\033[m Escolhir o número \033[1;37m{numero_c}\033[m')
-                cont += 1
+                print(f'Parabéns! Você ganhou\nescolhir o número {numero_c}')
             else:
-                print(f'Eu \033[1;31mvenci!\033[m Escolhir o número \033[1;37m{numero_c}\033[m')
+                print(f'Você perdeu\nescolhir o número {numero_c}')
                 break
-        if escolha_p == 'I':
+        elif escolha_u == 'I':
             if soma % 2 != 0:
-                print(f'Você \033[1;32mvenceu.\033[m Escolhir o número \033[1;37m{numero_c}\033[m')
-                cont +=1
+                print(f'Você ganhou\nescolhir o número {numero_c}')
             else:
-                print(f'Eu \033[1;31mvenci!\033[m Escolhir o número \033[1;37m{numero_c}\033[m')
+                print(f'Você perdeu\nescolhir o número {numero_c}')
                 break
-        vez_c = 0
-numero += cont
-print('')
-print('\033[35m-=-\033[m'*20)
-print(emoji.emojize(f'Fim de jogo :skull:. Você teve um total de \033[1;34m{cont}\033[m vitórias'))
-print('\033[35m-=-\033[m'*20)
+    cont += 1
+print(f'Fim do jogo, você perdeu\nO usuário teve {cont} vitórias')

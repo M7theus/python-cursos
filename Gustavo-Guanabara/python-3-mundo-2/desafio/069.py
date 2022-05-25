@@ -1,29 +1,29 @@
-idade_18 = 0
-quantidade_m = 0
-idade_f = 0
-quant = 0
-
+mais18 = menor18 = hc = mc = m20 = pessoas = 0
 while True:
     idade = int(input('Digite sua idade: '))
-    if idade > 18:
-        idade_18 += 1
-    sexo = str(input('Digite seu sexo [M/F]: ')).strip().upper()[0]
-    if sexo not in 'M' 'F':
-        while sexo not in 'M''F':
-                sexo = str(input('Digite seu sexo [M/F]: ')).strip().upper()[0]
-    if sexo == 'M':
-        quantidade_m += 1
-    else:
-        if idade < 20:
-            idade_f += 1
-    pergunta = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
-    while pergunta not in 'S''N':
-            pergunta = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
-    quant += 1
-    print('-=-'*20)
+    sexo = ' '
+    while sexo not in 'MF':
+        sexo = str(input('Digite seu sexo: ')).strip().upper()[0]
+    pergunta = ' '
+    while pergunta not in 'SN':
+        pergunta = str(input('Deseja continuar? [S/N]: ')).strip().upper()[0]
+    pessoas += 1
     if pergunta == 'N':
         break
-print('Certo. Programa finalizado com sucesso.')
-print(f'Do total das {quant} pessoas, {idade_18} são maiores de 18')
-print(f'{quantidade_m} são homens')
-print(f'{idade_f} são mulheres com menos de 20 anos')
+    
+    if idade > 18:
+        mais18 += 1
+    if idade < 18: 
+        menor18 += 1
+    if sexo == 'M':
+        hc += 1
+    if sexo == 'F':
+        mc += 1
+    if idade > 20 and sexo == 'F':
+        m20 += 1
+print(f'Do total das {pessoas}')
+print(f'{mais18} são maiores de idade')
+print(f'{menor18} são menores de idade')
+print(f'{hc} são do sexo masculino')
+print(f'{mc} são do sexo feminino')
+print(f'{m20} São mulheres com mais de 20 anos')
