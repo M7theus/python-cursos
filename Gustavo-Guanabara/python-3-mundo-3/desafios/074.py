@@ -1,21 +1,24 @@
 from random import randint
-'''numero = randint(0,10)
-lista = (numero, numero,numero,numero,numero)
-print(lista)'''
-
-#lista = (randint(0,10),randint(0,10),randint(0,10),randint(0,10),randint(0,10))
-print('Os números sorteados foram')
-for c in range(0,5):
-    a = randint(0,10)
-    print(f'{ [a] }',end='')
-    if c == 0:
-        maior = a
-        menor = a
+numeros = (randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10),)
+print('Os números sorteados foram: ')
+for numero in numeros:
+    print(f'{numero}')
+#Maneira menos prática:
+'''maior = menor = 0
+for termo in numeros:
+    if termo == 0:
+        maior = termo
+        menor = termo
     else:
-        if a > maior:
-            maior = a
-        elif a < menor:
-            menor = a
-print(end='')
-print(f'O maior número é o: {maior}\nE o menor número é o: {menor}')
+        if termo > maior:
+            maior = termo
+        elif termo < menor:
+            menor = termo
+print(f'\nO maior número foi o: {maior}')
+print(f'O menor número foi o: {menor}')'''
+
+#Maneira prática:
+print(f'\nO maior número é o: {max(numeros)}')
+print(f'O menor número é o: {min(numeros)}')
+
     
