@@ -1,14 +1,16 @@
-tabela = ('Corinthians','Palmeiras','São Paulo','Atlético-MG','Botafogo','Santos', 'Fluminense', 'Coritiba','América-MG','Avaí','Internacional','Athletico-PR','Bragantino','Flamengo','Goiás','Cuiabá','Atlético-GO','Juventude','Ceará','Fortaleza')
-a = str(tabela).split()
-print(f'Os 5 colocados são: {tabela[0:5]}')
-c = 0
-b = 16
-print('Os 5 últimos colocados são:')
-while c != 5:
-    print(f'{a[b::-20]}',end='')
-    c += 1
-    b += 1
-print(f'A ordem alfabética dos times é: {sorted(tabela)}')
+lista = ('Corinthians','Palmeiras','Santos','Grêmio','Cruzeiro','Flamengo','Vasco','Chapecoense','Atlético','Botafogo','Atlético-PR','Bahia','São Paulo','Fluminenser','Sport Recife','EC Vitória','Coritiba','Avai','Ponte Preta','Atlético-GO')
 
-nome = input('Digite o nome de um desses times para saber em qual posição ele se encontra na tabela: ').title()
-print(tabela.index(nome))
+print('\033[1;34m=\033[m' *35)
+print(f'A lista dos times completos é: ')
+for time in lista:
+    print(f'{ time }',end='')
+print('')
+print('\033[1;34m=\033[m' *35)
+print(f'Os 5 primeiros times são: {lista[:5]}')
+print('\033[1;34m=\033[m' *35)
+print(f'Os 5 últimos times são: {lista[-5:]}')
+print('\033[1;34m=\033[m' *35)
+print(f'A ordem alfabética dos times é: {sorted(lista)}')
+print('')
+print('\033[1;34m=\033[m' *35)
+print(f'O time da Chapecoense encontra-se na posição: {lista.index("Chapecoense")+1}')
