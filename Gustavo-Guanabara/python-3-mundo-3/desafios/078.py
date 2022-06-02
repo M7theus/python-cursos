@@ -1,28 +1,24 @@
 valores = list()
-for valor in range(0,5):
-    valores.append(int(input(f'Digite o {valor} valor: ')))
-print(f'Você digitou os seguintes números: {valores}')
-print(f'O maior número dentre eles é o: {max(valores)}')
-print(f'O menor número dentre eles é o: {min(valores)}')
-maior = max(valores)
-menor = min(valores)
-contagem_maior = valores.count(maior)
-contagem_menor = valores.count(menor)
+quantidade_maior =  quantidade_menor = 0
+for posicao in range(0,5):
+    numero = int(input(f'Digite o {posicao} número: '))
+    valores.append(numero)
+print(valores)
+print(f'O maior valor digitado foi: {max(valores)}')
+print(f'O menor valor digitado foi: {min(valores)}')
+quantidade_maior = valores.count(max(valores))
+quantidade_menor = valores.count(min(valores))
 
-print(f'A posição do maior valor é:')
-if contagem_maior > 1:
-    q = 0
-    for c in range(0,contagem_maior):
-        print(f'\n{valores.index(maior,q) }',end='')
-        q += 2
+if quantidade_maior > 1:
+    for con in range(0,quantidade_maior):
+        print(f'Posição dos maiores números: {valores.index(max(valores),con)}')
 else:
-    print(valores.index(maior))
-
-print(f'A posição do menor valor é: ')
-if contagem_menor > 1:
-    q = 0
-    for c in range(0,contagem_menor):
-        print(f'\n{valores.index(menor,q) }',end='')
-        q += 2
+    print(f'Posição dos maiores números: {valores.index(max(valores))}')
+    
+if quantidade_menor > 1:
+    a = 0
+    for cont in range(0,quantidade_menor):
+        print(f'Posição dos menores números: {valores.index(min(valores),a)}')
+        a = valores.index(max(valores))
 else:
-    print(valores.index(menor))
+    print(f'Posição dos menores números: {valores.index(min(valores))}')
