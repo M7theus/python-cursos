@@ -12,13 +12,13 @@ quantidade_menor = valores.count(min(valores))
 if quantidade_maior > 1:
     for con in range(0,quantidade_maior):
         print(f'Posição dos maiores números: {valores.index(max(valores),con)}')
+        con = valores.index(max(valores))
 else:
     print(f'Posição dos maiores números: {valores.index(max(valores))}')
     
 if quantidade_menor > 1:
-    a = 0
     for cont in range(0,quantidade_menor):
-        print(f'Posição dos menores números: {valores.index(min(valores),a)}')
-        a = valores.index(max(valores))
+        print(f'Posição dos menores números: {valores.index(min(valores),con)}')
+        con = valores.index(max(valores))
 else:
     print(f'Posição dos menores números: {valores.index(min(valores))}')
