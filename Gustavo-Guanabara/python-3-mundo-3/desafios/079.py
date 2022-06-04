@@ -1,13 +1,13 @@
 lista = list()
 while True:
-    numeros = int(input('Digite um número: '))
-    lista.append(numeros)
-    contagem = lista.count(numeros)
-    print(contagem)
-    if contagem > 1:
-        print('Hmm.... Número repetido. Vou remover!')
-        lista.remove(numeros)
-    pergunta = str(input('Você deseja continuar? [S/N]: ')).strip().upper()[0]
-    if pergunta == 'N':
+    numero = int(input('Digite um número: '))
+    if numero not in lista:
+        lista.append(numero)
+        print('Valor adicionado com sucesso!')
+    else:
+        print('Número duplicado. Não irei adicionar.')
+    pergunta = str(input('Deseja continuar? [S/N]: ')).strip()[0]
+    if pergunta in 'Nn':
         break
-print(f'Você digitou os números {lista.sort()}')
+lista.sort()
+print(f'Você digitou os valores: {lista}')

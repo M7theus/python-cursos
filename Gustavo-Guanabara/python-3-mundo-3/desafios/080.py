@@ -1,29 +1,13 @@
-lista = list()
-primero_numero = segundo_numero = 0
+lista = []
 for posicao in range(0,5):
-    numero = int(input('Digite seu número: '))
-    print(f'Posição: {posicao}')
-    if posicao == 0:
-        primero_numero = numero
-        lista.insert(0, numero)
-    if posicao == 1:
-        if numero > primero_numero:
-            lista.insert(posicao, numero)
-        else:
-            lista.insert(0, numero)
-    if posicao > 1:
-        if numero > primero_numero:
-            if numero > segundo_numero:
-                lista.insert(posicao, numero)
-            else:
-                lista.insert(posicao-1, numero)
-        if numero < primero_numero: 
-            if numero < segundo_numero:
-                lista.insert(0, numero)
-            else:
-                lista.insert(posicao-1, numero)
-    
-    primero_numero = numero
-    segundo_numero = numero
-    print(lista)
+    numero = int(input(f'Digite o número da {posicao} posição: '))
+    if posicao == 0 or numero > lista[-1]:
+        lista.append(numero)
+    else:
+        pos = 0
+        while pos < len(lista):
+            if numero <= lista[pos]:
+                lista.insert(pos, numero)
+                break
+            pos += 1
 print(lista)
