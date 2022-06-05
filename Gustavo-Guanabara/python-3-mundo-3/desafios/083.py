@@ -1,16 +1,15 @@
-exprecao = str(input('Digite sua expresão: '))
-soma = []
-for simb in exprecao:
-    if simb == '(':
-        soma.append('(')
-    elif simb == ')':
-        if len(soma) > 0:
-            soma.pop()
+expressao = str(input('Digite sua expressão: '))
+lista = list()
+for ex in expressao:
+    if ex == '(':
+        lista.append(ex)
+    elif ex == ')':
+        if len(lista) > 0:
+            lista.pop()
         else:
-            soma.append(')')
+            lista.append(')')
             break
-if len(soma) == 0:
-    print('Sua expressão é válida')
+if len(lista) == 0:
+    print('Sua expressão está correta')
 else:
-    print('Sua expressão não é válida')
-    
+    print('Sua expressão não está correta')    

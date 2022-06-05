@@ -1,9 +1,8 @@
-lista = []
+lista = list()
 for posicao in range(0,5):
-    numero = int(input(f'Digite o {posicao} número: '))
+    numero = int(input('Digite o número da posicao {posicao}: '))
     if posicao == 0 or numero > lista[-1]:
         lista.append(numero)
-        print('Número adicionado ao final da lista')
     else:
         pos = 0
         while pos < len(lista):
@@ -11,4 +10,4 @@ for posicao in range(0,5):
                 lista.insert(pos, numero)
                 break
             pos += 1
-print(lista)
+print(f'A sua lista ficou: {lista}')

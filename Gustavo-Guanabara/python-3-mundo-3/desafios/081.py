@@ -1,17 +1,16 @@
-lista = list()
+lista = []
 while True:
-    numero = int(input('Digite um valor: '))
-    lista.append(numero)
-    pergunta = str(input('Você deseja continuar? [S/N]: ')).strip()[0]
+    lista.append(int(input('Digiteu um número: ')))
+    pergunta = str(input('Deseja continuar? [S/N]: ')).strip()[0]
     if pergunta in 'Nn':
         break
 lista.sort(reverse=True)
 print(f'Foram digitados um total de {len(lista)}')
-print(f'A ordem decrescente da lista é: {lista}')
+print(f'A lista em forma decrescente torna-se: {lista}')
 if 5 in lista:
-    print(f'O cinco foi digitado e se encontra nas posições: ')
+    print(f'O valor cinco encontra-se na lista e suas respectivas possições são: ',end='')
     for p,v in enumerate(lista):
         if v == 5:
-            print(p,end=' ')
+            print(p)
 else:
-    print('O valor cinco não foi digitado na lista')
+    print('O valor cinco não se encontra presente na lista')

@@ -1,24 +1,20 @@
 lista = list()
-lista_par = list()
+lista_par = []
 lista_impar = list()
 while True:
-    numero = int(input('Digite um número: '))
-    lista.append(numero)
-    pergunta = str(input('Quer continuar? [S/N]: ')).strip()[0]
+    lista.append(int(input('Digite um número: ')))
+    pergunta = str(input('Deseja continuar? [S/N]: ')).strip()[0]
     if pergunta in 'Nn':
         break
-for valor in lista:
-    if valor % 2 == 0:
-        lista_par.append(valor)
+
+print(f'Sua lista completa ficou: {lista}')
+for par in lista:
+    if par % 2 == 0:
+        lista_par.append(par)
     else:
-        lista_impar.append(valor)
-           
-print(lista)
-print(lista_par)
-print(lista_impar)
-
-
-
+        lista_impar.append(par)
+print(f'Sua lista par ficou: {lista_par}')
+print(f'Sua lita ímpar ficou: {lista_impar}')
 
 
 
