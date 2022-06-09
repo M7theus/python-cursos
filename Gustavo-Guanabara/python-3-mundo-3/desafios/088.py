@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 lista = []
 jogos = list()
 
@@ -9,9 +10,14 @@ for posicao in range(1,pergunta+1):
         numero = randint(1, 60)
         if numero not in lista:
             lista.append(numero)
-        if cont == 5:
+            cont += 1
+        if cont == 6:
             break
-        cont += 1
+    lista.sort()
     jogos.append(lista[:])
     lista.clear()
-print(jogos)
+print('Os jogos sorteados foram: ')
+for posicao,valor in enumerate(jogos):
+    print(f'Jogo {posicao+1}: {valor}')
+    sleep(1)
+print('Boa sorte')
