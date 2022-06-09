@@ -1,23 +1,22 @@
 lista = list()
-total = []
-nomes = 0
-cont = 0
 while True:
-    lista.append(str(input('Nome: ')).title())
-    nomes += 1
-    lista.append(float(input('Nota 1: ')))
-    lista.append(float(input('Nota 2: ')))
-    lista.append((lista[1] + lista[2])/2)
-    total.insert(0, lista[0])
-    total.insert(1, lista[1:3])
-    total.insert(2, lista[3])
+    nome = str(input('Digite seu nome: '))
+    nota_1 = float(input('Nota 1: '))
+    nota_2 = float(input('Nota 2: '))
+    media = (nota_1 + nota_2)/2
+    lista.append([nome,[nota_1, nota_2],media])
     pergunta = str(input('Deseja continuar? [S/N]: ')).strip()[0]
-    cont += 1
     if pergunta in 'Nn':
+        break 
+print('-='*30)
+print(f'{"No":<4}{"NOME":<10}{"MÉDIA":>8}')
+print('-='*30)
+for posicao, valor in enumerate(lista):
+    print(f'{posicao:<4}{valor[0]:<10}{valor[2]:>8.1f}')
+print('-='*30)
+while True:
+    pergunta = int(input('Qual nota gostaria de olhar? [999 para parar]: '))
+    if pergunta == 999:
         break
-print('-='*20)
-print(f'No. Nome          média')
-
-print(total)
-
-    
+    if pergunta <= len(lista)-1:
+        print(f'Notas de {lista[pergunta][0]} são {lista[pergunta][1]}')
