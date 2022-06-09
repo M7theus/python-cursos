@@ -1,21 +1,17 @@
 from random import randint
-from time import sleep
-lista = list()
-pergunta = int(input('Quantos jogos você quer que eu sortei? '))
-print(f'Sorteando { pergunta :=> 10} jogos')
+lista = []
+jogos = list()
 
-
-for posicao in range(0,pergunta):
-    b = -1
-    jogo = [randint(0, 60), randint(0, 60), randint(0, 60), randint(0, 60), randint(0, 60), randint(0, 60)]
-    for a in enumerate(jogo):
-        while a[1] == jogo[b]:
-            jogo[b] = randint(0, 60)
-        b += 1
-    lista.append(jogo[:])
-    for jogos in lista:
-        jogos.sort()
-        print(f'Jogo {posicao +1}: {jogos}')
-        sleep(1)
+pergunta = int(input('Quantos jogos serão feitos? '))
+for posicao in range(1,pergunta+1):
+    cont = 0
+    while True:
+        numero = randint(1, 60)
+        if numero not in lista:
+            lista.append(numero)
+        if cont == 5:
+            break
+        cont += 1
+    jogos.append(lista[:])
     lista.clear()
-print('Boa sorte!')
+print(jogos)

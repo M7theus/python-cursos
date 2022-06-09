@@ -1,12 +1,11 @@
-lista = list()
-lista_par = []
-lista_impar = []
-for posicao in range(0,8):
-    lista.append(int(input(f'Digite o {posicao} número: ')))
-    if lista[0] % 2 == 0:
-        lista_par.append(lista[:])
+lista = [[], []]
+for posicao in range(1,8):
+    numero = int(input(f'Digite o {posicao} valor: '))
+    if numero % 2 == 0:
+        lista[0].append(numero)
     else:
-        lista_impar.append(lista[:])
-    lista.clear()
-print(f'Os valores pares digitados foram: {lista_par}')
-print(f'Os valores ímpares digitados foram: {lista_impar}')
+        lista[1].append(numero)
+lista[0].sort()
+lista[1].sort()
+print(f'Os valores pares digitados foram: {lista[0]}')
+print(f'Os valores ímpares digitados foram: {lista[1]}')
