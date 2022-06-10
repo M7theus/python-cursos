@@ -1,6 +1,3 @@
-from stringcolor import *
-paleta_cores = [['#281b24'],['#d02941'],['#f57e67'],['#d9c9a5'],['#8cab94']]
-
 matriz = [[0,0,0],[0,0,0],[0,0,0]]
 soma_pares = 0
 soma_terceira = 0
@@ -20,9 +17,15 @@ for lista in range(0,3):
                     maior_segunda = numero
         matriz[lista][posicao] = numero
 print('-='*30)
+print(f'--> \033[1;32mPar\033[m')
+print(f'--> \033[1;31mÍmpar\033[m')
+print()
 for lista in range(0,3):
     for posicao in range(0,3):
-        print(f'[{matriz[lista][posicao]:^5}]',end='')
+        if matriz[lista][posicao] % 2 == 0:
+            print(f'\033[1;32m[{matriz[lista][posicao]:^5}]\033[m',end='')
+        else:
+            print(f'\033[1;31m[{matriz[lista][posicao]:^5}]\033[m',end='')
     print()
 print('-='*30)
 print(f'A soma dos valores pares foi de: {soma_pares}')
