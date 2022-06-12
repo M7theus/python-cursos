@@ -1,18 +1,18 @@
-from random import randint
-from time import sleep
-dados = dict()
-lista = list()
+from random import randint #Números aleatórios
+from time import sleep #Dormir
+from operator import itemgetter #Organização das listas
 
-for posicao in range(1,5):
-    numero = randint(1, 6)
-    print(f'O jogador{posicao} tirou: {numero}')
-    dados[f'jogador{posicao}'] = numero
+jogo = {'jogador1': randint(1, 6),
+        'jogador2': randint(1, 6),
+        'jogador3': randint(1, 6),
+        'jogador4': randint(1, 6)
+}
+ranking = list()
+for keys,values in jogo.items():
+    print(f'{keys} tirou o número: {values}')
     sleep(1)
-    
-lista.append(dados.copy())
-print('Ranking dos jogadores: ')
-numero = 1
-for posicao in lista:
-    for keys,values in posicao.items():
-        print(f'{numero}o lugar: {keys} com {values}')
-        numero += 1
+print('-- Ranking dos jogadores --')
+
+ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+for keys,values in enumerate(ranking):
+    print(f'{keys+1} --> {values[0]}:      {values[1]}')
