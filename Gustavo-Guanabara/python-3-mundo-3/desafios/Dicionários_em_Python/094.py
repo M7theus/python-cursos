@@ -25,9 +25,12 @@ print(lista)
 print('-='*30)
 print(f'Foram cadasdrado um total de {quant_pessoas} pessoas.')
 print(f'A média da idade do grupo é de: {media_idade:.2f}')
-print(f'Uma lista com todas as mulheres: {lista_mulher}')
+print(f'As mulheres cadastradas foram: {lista_mulher}')
 print('Lista das pessoas que estão acima da média: ')
+print('-='*30)
 for posicao in lista:
-    for keys, values in posicao.items():
-        if values > media_idade:
-            print(f'{keys} = {values}')
+    for keys,values in posicao.items():
+        if posicao["idade"] > media_idade:
+            print(f'{keys} = {values}',end='')
+        print()
+
