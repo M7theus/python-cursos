@@ -1,21 +1,29 @@
-lista = [[],[]]
-dado = dict()
+lista = list()
 
-print(f'{" Matriz ":=^30}')
-pergunta_colun = int(input('Quantas colunas terá sua matriz? '))
-pergunta_linha = int(input('Quantas linhas terá sua matriz? '))
-for coluna in range(0,pergunta_colun):
-    for linha in range(0,pergunta_linha):
-        pergunt = int(input(f'Digite [{coluna}, {linha}]: '))
-        if linha == 0:
-            dado['coluna'] = pergunt
-            lista[0].append(dado.copy())
-        if linha >= 1:
-            dado['linha'] = pergunt
-            lista[1].append(dado.copy())
-        dado.clear()
+coluna = int(input('Quantas colunas terá sua matriz? '))
+for _ in range(0,coluna):
+    lista.append([])
+print(lista)
 
-for coluna in range(0,pergunta_colun):
-    print(f'{lista[0][coluna]}')
-    for linha in range(0, pergunta_linha):
-        print(f'{lista[1][linha]}')
+while True:
+    linha = int(input('Quantas linhas terá sua coluna? '))
+    if linha % 2 == 1:
+        print('Impossível formação de matriz. Tente novamente')
+        print()
+    else:
+        break
+
+for linhas in range(0,linha):
+    if linhas % 2 == 0:
+        lista[linhas].append(0*coluna)
+    else:
+        lista[linhas].append(0)
+print(lista)
+
+for colunas in range(0,coluna):
+    for linhas in range(0,coluna):
+        if linhas % 2 == 0:
+            lista[colunas][linhas] = int(input(f'Digite o número da posição: [{colunas},{linhas}]: '))
+        else:
+            lista[colunas][linhas] = int(input(f'Digite o número da posição: [{colunas},{linhas}]: '))
+print(lista)
