@@ -1,27 +1,15 @@
-from datetime import date
-ano = date.today().year
+from datetime import datetime
+ano_atual = datetime.now().year
 
 dados = dict()
-lista = list()
-
-dados['nome'] = str(input('Digite seu nome: '))
-nascimento = int(input('Digite seu ano de nascimento: '))
-dados['idade'] = ano - nascimento
-carteiratrabalho = int(input('Carteira de trabalho (0 não tem): '))
-dados['ctps'] = carteiratrabalho
-if carteiratrabalho == 0:
-    lista.append(dados.copy())
-    print('-='*30)
-    for posicao in lista:
-        for keys, values in posicao.items():
-            print(f'{keys} tem o valor {values}')
-if carteiratrabalho != 0:
-    contratacao = int(input('Ano de contratação: '))
-    dados['contratação'] = contratacao
-    dados['salário'] = int(input('Salário: R$ '))
-    dados['aposentadoria'] = (contratacao + 35) - nascimento
-    lista.append(dados.copy())
-    print('-='*30)
-    for posicao in lista:
-        for keys, values in posicao.items():
-            print(f'{keys} tem o valor {values}')
+dados['nome'] = str(input('Digite seu nome: ')).strip().title()
+ano_nascimento = int(input('Digite seu ano de nascimento: '))
+dados['idade'] = ano_atual - ano_nascimento
+dados['ctps'] = int(input('Carteira de trabalho? ( 0 para parar ): '))
+if dados['ctps'] != 0:
+    dados['contratação'] = int(input('Digite o ano de contratação: '))
+    dados['salário'] = int(input('Digite seu salário: '))
+    dados['aposentadoria'] = ((dados['contratação'] + 35) - ano_nascimento)
+print('-='*30)
+for keys, values in dados.items():
+    print(f'--> {keys} tem o valor: \033[1;32m{values}\033[m')
