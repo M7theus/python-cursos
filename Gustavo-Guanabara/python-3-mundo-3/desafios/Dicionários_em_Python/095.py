@@ -1,27 +1,45 @@
 dados = dict()
-gols = list()
-lista = list()
+lista_gols = list()
+lista_completa = list()
 total = 0
-cont = 0
 
 while True:
-    dados['cod'] = cont
-    cont += 1
-    dados['nome'] = str(input('Digite o nome do jogador: '))
-    partidas = int(input(f'Quantas partidasd {dados["nome"]} jogou? '))
-    for posicao in range(0,partidas):
-        pergunta_gols = int(input(f'Quantos gols na {posicao} partida? '))
-        gols.append(pergunta_gols)
-        total += pergunta_gols
-    dados['gols'] = gols[:]
-    dados['total'] = total
-    lista.append(dados.copy())
-    gols.clear()
     dados.clear()
-    confirmacao = str(input('Deseja continuar? [S/N]: ')).strip().upper()[0]
-    if confirmacao in 'N':
+    lista_gols.clear()
+    dados['nome'] = str(input('Digite o nome do jogador: ')).strip().title()
+    pergunta = int(input('Quantos jogos foram jogados? '))
+    for posicao in range(0,pergunta):
+        lista_gols.append(int(input(f'Quantos gols no jogo {posicao}: ' )))
+        total += lista_gols[posicao]
+    dados['gols'] = lista_gols
+    dados['total'] = total
+    lista_completa.append(dados.copy())
+    while True:
+        resposta = str(input('Deseja continuar? [S/N]: ')).strip().upper()[0]
+        if resposta in 'SN':
+            break
+        print('Erro! Por favor, digite apenas S ou N como resposta')
+    if resposta in 'N':
         break
-    print('-='*30)
-print(f'{"cod":<10}{"nome":>5}{"gols":>20}{"Total":>30}')
-for teste in lista:
-    print(f'{teste["cod"]:<10},{teste["nome"]:>5},{teste["gols"]:>20},{teste["total"]:>30}')
+print('-='*30)
+for k in dados.keys():
+    print(f'{k:<5}',end='')
+print()
+for k,v in enumerate(lista_completa):
+    print(f'{k:<2}',end='')
+    for value in v.values():
+        print(f' {str(value)} ',end='')
+    print()
+while True:
+    afirmacao = int(input('Digite o número do jogador para obter mais informações (999 para parar): '))
+    if afirmacao == 999:
+        break
+    if afirmacao >= len(lista_completa):
+        print('Valor informado não existente.Tente outro valor')
+    else:
+        print()
+        for k,v in enumerate(lista_completa[afirmacao]["gols"]):
+            print(f'{k} --> {v}')
+            
+    
+
