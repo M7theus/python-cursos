@@ -1,22 +1,22 @@
-def linha ():
-    
-    print('-='*30)
-def maior (*lista):
-    linha()
-    print('Analisando os valores passados...')
-    while True:
-        for posicao in lista:
-            print(f'{posicao} .',end='')
-        if max(lista) == 0:
-            print(f'Foram informados ao todo {0} valores')
-            print(f'O maior valor informado foi: {max(lista)}')
-            break
-        print(f'Foram informados ao todo {len(lista)} valores')
-        print(f'O maior valor informado foi: {max(lista)}')
-        break
+from time import sleep
 
-maior(2,9,4,5,7,1)
-maior(4,7,0)
-maior(1,2)
-maior(6)
-maior(0)
+def maior (* numeros):
+    cont = maior = 0
+    print(f'Analisando os valores passados {"..."}\n',end='')
+    for num in numeros:
+        print(f'{num} ',end='',flush=True)
+        sleep(0.4)
+        if cont == 0:
+            maior = num
+        else:
+            if num > maior:
+                maior = num
+        cont += 1 
+    print(f'O maior número entre os {cont} é o: {maior}')
+    print('-=-'*20)
+
+maior(2,4,3,1,5,1)
+maior(2,9,5,4)
+maior(6,7)
+maior(3)
+maior()

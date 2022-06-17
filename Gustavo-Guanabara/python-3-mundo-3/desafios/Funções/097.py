@@ -1,6 +1,6 @@
 def frase (txt):
     print('-'*len(txt))
-    print(txt)
+    print(f'{txt}')
     print('-'*len(txt))
 
 frase ('Matheus')
