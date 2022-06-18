@@ -7,7 +7,7 @@
 n = int(input('Digite um número: '))
 print(f'O fatorial de n é igual a:{ fatorial(n)}')'''
 
-'''def Par(num=0):
+def Par(num=0):
     if num % 2 == 0:
         return 'Par'
     else:
@@ -19,4 +19,4 @@ print(Par(num))
 if Par(num):
     print(f'É par')
 else:
-    print('Não é par')'''
+    print('Não é par')
