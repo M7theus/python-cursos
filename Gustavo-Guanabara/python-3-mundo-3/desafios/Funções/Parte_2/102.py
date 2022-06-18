@@ -1,24 +1,28 @@
-def fatorial (digito): #Faz a conta
-    global numero
-    cont = numero
-    conta = 1
-    while cont != 0:
-        conta *= cont
-        cont -= 1
-    return conta
-    if show == True:
-        def show(): #Mostra o passo
-            global numero
-            cont = numero
-            while cont != 0:
-                if cont > 1:
-                    print(f' {"x"} ',end='')
-                if cont == 1:
-                    print(f' {"="} ',end='')
-                cont -= 1
-            return cont
-        
+def fatorial (numero, show = 0):
+    """
+    --> Função fatorial <--
+    Possui dois atribudos:
+    * numero = O valor que você quer vê o fatorial
+    * show = Caso seja 'True' ele mostrará o passo a passo da conta
+    """
+    if show == False:
+        cont = numero
+        conta = 1
+        while cont > 1:
+            conta *= cont
+            cont -= 1
+        print(conta)
+    elif show == True:
+        cont = numero
+        conta = 1
+        while cont >= 1:
+            print(f' {cont} ',end='')
+            if cont > 1:
+                print(f'x',end='')
+            if cont == 1:
+                print(f'{"="}',end='')
+            conta *= cont
+            cont -= 1
+        print(f' {conta} ',end='')
 
-
-numero = int(input('Digite um número: '))
-print(fatorial(5), show=True)
+help(fatorial)
