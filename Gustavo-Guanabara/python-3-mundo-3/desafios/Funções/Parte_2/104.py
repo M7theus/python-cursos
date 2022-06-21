@@ -1,12 +1,12 @@
-def leiaInt (txt):
+def leiaInt(txt):
     while True:
-        valor = input(txt)
-        int(valor)
-        if -1 >= valor >= 0:
-            return valor
+        n = input(txt)
+        if n.isnumeric():
+            return n
             break
-        print('\033[1;31mERRO! Digite apenas números\033[m')
-        str(valor)
+        print(f'Erro! Digite um número inteiro')
     
-numero = leiaInt('Digite um número: ')
-print(f'Você digitou o número: {numero}')
+    
+    
+numero = leiaInt('Digite um número: ')  
+print(f'O número informado foi o {numero}')  
