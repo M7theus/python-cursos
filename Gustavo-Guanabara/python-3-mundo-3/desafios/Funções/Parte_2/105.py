@@ -31,5 +31,5 @@ def notas (*num,sit=0):
     return dados
     
 
-resp = notas(10,8,8,4,5,sit=True)
+resp = notas(10,4,5,3,4,9,6,sit=True) #Inserindo notas
 print(resp)
