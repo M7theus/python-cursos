@@ -1,35 +1,18 @@
-dados = dict()
-lista = list()
-
-def notas (*num,sit=0):
-    cont = maior = menor = 0
-
-    lista = num
-    dados['total'] = len(lista)
-    
-    while cont != len(lista):
-        if cont == 0:
-            maior = lista[cont]
-            menor = lista[cont]
+def dados (*num,sit=False):
+    dic = dict()
+    dic['Notas'] = num
+    dic['Maior'] = max(num)
+    dic['Menor'] = min(num)
+    dic['Média'] = sum(num)/len(num)
+    dic['Total'] = len(num)
+    if sit:
+        if dic['Média'] >= 7:
+            dic['Situação'] = 'Boa'
+        elif dic['Média'] >= 5:
+            dic['Situação'] = 'Razoável'
         else:
-            if lista[cont] > maior:
-                maior = lista[cont]
-            elif lista[cont] < menor:
-                menor = lista[cont]
-        cont += 1
-    
-    dados['maior'] = maior
-    dados['menor'] = menor
-    dados['media'] = sum(lista)/len(lista)
-    dados['notas'] = num
-    
-    if sit == True:
-        if dados['media'] <= 6:
-            dados['situação'] = 'Situação ruim'
-        else:
-            dados['situação'] = 'Situação boa'
-    return dados
-    
+            dic['Situação'] = 'Ruim'    
+    return dic
 
-resp = notas(10,4,5,3,4,9,6,sit=True) #Inserindo notas
-print(resp)
+info = dados(3,5,7,1,2,6,3,sit=True)
+print(info)
