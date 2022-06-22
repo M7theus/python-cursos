@@ -1,10 +1,17 @@
-def jogo ():
-    nome = str(input('Digite o nome do jogador: ')).strip().title()
-    if len(nome) < 1:
-        nome = '<desconhecido>'
-    gols = str(input('Digite a quantidade de gols: '))
-    if len(gols) < 1:
-        gols = 0
-    print(f'O jogador {nome} fez {gols} gols')
+def dados (nome = '<desconhecido>', gol=0):
+    print(f'O jogador {nome} fez {gol} gols')
 
-jogo()
+n = str(input('Digite o nome do jogado: '))
+g = str(input('Digite a quantidade de gols feita no jogo: '))
+
+
+if g.isnumeric():
+    g = int(g)
+else:
+    g = 0
+
+if n.strip() == '':
+    dados(gol = g)
+else:
+    dados(n,g)
+

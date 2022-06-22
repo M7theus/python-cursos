@@ -1,28 +1,34 @@
-def fatorial (numero, show = 0):
-    """
-    --> Função fatorial <--
-    Possui dois atribudos:
-    * numero = O valor que você quer vê o fatorial
-    * show = Caso seja 'True' ele mostrará o passo a passo da conta
-    """
-    if show == False:
-        cont = numero
-        conta = 1
-        while cont > 1:
-            conta *= cont
-            cont -= 1
-        print(conta)
-    elif show == True:
-        cont = numero
-        conta = 1
-        while cont >= 1:
-            print(f' {cont} ',end='')
-            if cont > 1:
-                print(f'x',end='')
-            if cont == 1:
-                print(f'{"="}',end='')
-            conta *= cont
-            cont -= 1
-        print(f' {conta} ',end='')
+#Fazendo com o while
+'''def fatorial(num, show=False):
+    cont = num
+    mult = 1
+    while cont != 0:
+        mult *= cont
+        if show:
+            print(cont,end='')
+            if cont >= 2:
+                print(f'{" X "}',end='')
+            else:
+                print(f'{" = "}',end='')
+        cont -= 1
+    return mult'''
 
-help(fatorial)
+#Fazendo com o for
+def fatorial (num, show=False):
+    """
+    --> Docstring
+    """
+    mult = 1
+    for posicao in range(numero,0,-1):
+        if show:
+            print(posicao,end='')
+            if posicao >= 2:
+                print(f'{" X "}',end='')
+            else:
+                print(f'{" = "}',end='')
+        mult *= posicao
+    return mult
+        
+
+numero = int(input('Digite o número que desejar visualizar o fatorial: '))
+print(fatorial(numero, show=True))
