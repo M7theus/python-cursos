@@ -10,6 +10,8 @@ def dobro(valor):
 
 def aumento (valor, porcentagem = 1):
     co = (porcentagem/100)*valor + valor
+    return co
     
 def redução (valor, porcentagem =1):
-    re = (porcentagem/100)*valor - valor
+    re = valor-(porcentagem/100)*valor
+    return re
