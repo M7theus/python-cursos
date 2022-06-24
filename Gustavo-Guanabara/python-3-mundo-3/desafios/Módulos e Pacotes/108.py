@@ -1,3 +1,5 @@
-from desafio107 import d108,moeda
+from desafio107 import moedas
 
-print(f'{d108.moeda.metade(3)}')
+preco = float(input('Digite o preço da moeda: '))
+
+moedas.moeda_.metade(preco)
