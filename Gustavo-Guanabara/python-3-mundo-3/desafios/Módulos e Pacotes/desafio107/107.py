@@ -1,4 +1,4 @@
-from desafio107 import moeda
+import moeda
 
 preco = float(input('Digite o preço da moeda: '))
 print(f'A metade de {preco} é: {moeda.metade(preco)}')
