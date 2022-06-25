@@ -1,4 +1,4 @@
-from utilidadecevs import moeda
+from utilidadecev import moeda
 
 preco = float(input('Digite o preço da moeda: '))
-moeda.moeda.resumo(preco)
+moeda.resumo(preco,80,35)

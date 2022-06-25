@@ -27,16 +27,13 @@ def redução (valor, porcentagem =1, form = False):
 def formatacao(valor = 0, moeda='R$'):
     return f'{moeda}{valor:.2f}'.replace('.', ',')
 
-def resumo(valor = 0):
+def resumo (valor=0,tax_au = 0, taxa_dim = 0):
     print('-'*30)
-    print(f'{"Resumo do valor":^30}')
+    print('Resumo do valor'.center(30))
     print('-'*30)
-    print(f'{"Preço analisado:"}',end='')
-    print(f'{"R$":>10}{valor:>5.2f}')
-    print(f'{"Dobro do preço:":>10} {"R$":>10}{valor*2:>5.2f}')
-    print(f'{"Metade do preço:":>10} {"R$":>10}{valor/2:>5.2f}')
-    aumento = ((8/100)*valor) + valor
-    print(f'{"8% de aumento:":>10} {"R$":>10}{aumento:>5.2f}')
-    desconto = ((35/100)*valor) + valor
-    print(f'{"35% de desconto:":>10} {"R$":>10}{desconto:>5.2f}')
+    print(f'Preço analisado: \t\t{formatacao(valor)}')
+    print(f'Metade desse preço: \t\t{metade(valor,True)}')
+    print(f'Dobro desse preço: \t\t{dobro(valor,True)}')
+    print(f'Aumento de {tax_au}% do preço: \t{aumento(valor,tax_au,True)}')
+    print(f'Diminuição de {taxa_dim}% do preço: \t{redução(valor,taxa_dim,True)}')
     
