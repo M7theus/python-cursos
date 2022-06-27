@@ -1,33 +1,29 @@
 def leiaInt (txt):
     while True:
         try:
-            numero = str(input(txt))
-            int(numero)
-            if numero.isnumeric():
-                return numero
+            numero = int(input(txt))
         except (ValueError, TypeError):
             print('Ocorreu um problema de dado')
-        except ZeroDivisionError:
-            print('Não é possível dividir um número por zero')
-        except KeyboardInterrupt:
-            print('O usuário não digitou')
+        except (KeyboardInterrupt):
+            print('O usuário não digitou nenhum valor')
+            return 0
+        else:
+            return numero
 
 def LeiaFloat(valor):
     while True:
         try:
-            numero = str(input(valor))
-            float(numero)
-            if numero.isnumeric():
-                return numero
+            numero = float(input(valor))
         except (ValueError, TypeError):
             print('Ocorreu um problema de dado')
-        except ZeroDivisionError:
-            print('Não é possível dividir um número por zero')
-        except KeyboardInterrupt:
-            print('O usuário não digitou')
+        except (KeyboardInterrupt):
+            print('O usuário não digitou nehum valor')
+            return 0
+        else:
+            return numero
         
 
 
-numero = leiaInt('Digite um número: ')
-numero = LeiaFloat('Informe um valor flutuante: ')
-print(f'O número informado foi o: {numero}') 
+n1 = leiaInt('Digite um número: ')
+n2 = LeiaFloat('Informe um valor flutuante: ')
+print(f'O número informado foi o: {n1},{n2}') 
