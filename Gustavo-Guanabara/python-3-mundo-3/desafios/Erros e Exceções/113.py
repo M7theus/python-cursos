@@ -6,16 +6,12 @@ def leiaInt (txt):
             return numero
         print(f'\033[1;31mERRO! Digite apenas números\033[m')
 
-cont = 0
-while True:
-    numero = str(input('Digite um número: '))
-    cont += 1
-    if numero.isnumeric():
-        if (numero // 1 == numero):
-            print('Número inteiro')
-        else:
+def LeiaFloat (valor):
+    while True:
+        numero = str(input(valor))
+        if numero // 1 != numero:
             print('Número flutuante')
-    if cont == 2:
-        break
-'''numero = leiaInt('Digite um número: ')
-print(f'O número informado foi o: {numero}') '''
+
+numero = leiaInt('Digite um número: ')
+flutuante = LeiaFloat('Digite um número: ')
+print(f'O número informado foi o: {numero},{flutuante}') 
