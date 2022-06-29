@@ -1,7 +1,9 @@
-import requests
+import urllib
+import urllib.request
 
-response = requests.get('http://pudim.com.br/')
-if response:
-    print('Certo')
+try:
+    site = urllib.request.urlopen('http://pudim.com.br/')
+except:
+    print('Acesso não deu certo')
 else:
-    print('Inválido')
+    print('Conseguir acessar!')
